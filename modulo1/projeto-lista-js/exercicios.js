@@ -101,8 +101,7 @@ function checaStringsMesmoTamanho(string1, string2) {
 function retornaPrimeiroElemento(array) {
   // implemente sua lógica aqui
       
-      return array[0]    
-      
+  return array[0]          
             
 }
 
@@ -110,8 +109,10 @@ function retornaPrimeiroElemento(array) {
 function retornaUltimoElemento(array) {
   // implemente sua lógica aqui
 
-       return array[array.length -1]
-}
+  return array[array.length -1]
+      
+      
+      }
 
 // EXERCÍCIO 11
 function trocaPrimeiroEUltimo(array) {
@@ -125,6 +126,7 @@ function trocaPrimeiroEUltimo(array) {
 
       return array
 
+
 }
 
 // EXERCÍCIO 12
@@ -135,6 +137,7 @@ function checaIgualdadeDesconsiderandoCase(string1, string2) {
       const segundaPalavra = string2.toLowerCase()
       const vericacao = primeiraPalavra === segundaPalavra
       return vericacao
+
 
 }
 
