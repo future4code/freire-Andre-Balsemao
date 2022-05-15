@@ -180,6 +180,8 @@ function checaValidadeInscricaoLabenu() {
 
     let resposta = perguntaIdade == "sim" && perguntaEscolaridade == "sim" && perguntaDisponibilidade == "sim"
 
-     console.log (resposta) 
+     console.log (resposta)
 
 }
+
+// mensagem aleatória.
