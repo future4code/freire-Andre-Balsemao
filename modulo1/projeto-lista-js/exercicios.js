@@ -31,8 +31,8 @@ function calculaAreaRetangulo() {
       // EXERCÍCIO 02
 function imprimeIdade() {
   // implemente sua lógica aqui
-      const anoAtual = Number(prompt('Digite o valor da altura do retângulo:')) 
-      const anoNascimento = Number(prompt('Digite o valor da largura do retângulo:'))   
+      const anoAtual = Number(prompt('Qual o ano atual?')) 
+      const anoNascimento = Number(prompt('Qual o ano de seu nascimento?'))   
       imprimeIdade = anoAtual - anoNascimento
       console.log(imprimeIdade)
 }
@@ -101,8 +101,7 @@ function checaStringsMesmoTamanho(string1, string2) {
 function retornaPrimeiroElemento(array) {
   // implemente sua lógica aqui
       
-      return array[0]    
-      
+  return array[0]          
             
 }
 
@@ -110,14 +109,23 @@ function retornaPrimeiroElemento(array) {
 function retornaUltimoElemento(array) {
   // implemente sua lógica aqui
 
-       return array[array.length -1]
-}
+  return array[array.length -1]
+      
+      
+      }
 
 // EXERCÍCIO 11
 function trocaPrimeiroEUltimo(array) {
   // implemente sua lógica aqui
 
-  
+      let ultimaPalavra= array[array.length-1]
+      let primeiraPalavra= array[0]
+
+      array[array.length-1]= primeiraPalavra
+      array[0]= ultimaPalavra
+
+      return array
+
 
 }
 
@@ -125,17 +133,39 @@ function trocaPrimeiroEUltimo(array) {
 function checaIgualdadeDesconsiderandoCase(string1, string2) {
   // implemente sua lógica aqui
 
+      const primeiraPalavra = string1.toLowerCase()
+      const segundaPalavra = string2.toLowerCase()
+      const vericacao = primeiraPalavra === segundaPalavra
+      return vericacao
+
+
 }
 
 // EXERCÍCIO 13
 function checaRenovacaoRG() {
   // implemente sua lógica aqui
 
+      let anoAtual2 = prompt('Inform o ano atual')
+      let anoNascismentoUsuario = prompt('Qual o ano de seu nascimento?')
+      let anoEmissaoRG = prompt('Qual o ano de emissão do seu RG?')
+      const idadeUsuario = anoAtual2 - anoNascismentoUsuario
+      const validadeRG = anoAtual2 - anoEmissaoRG
+
+      const condicao1 = validadeRG >= 5 && idadeUsuario <= 20
+      const condicao2 = validadeRG >= 10 && idadeUsuario >20 && idadeUsuario <= 50
+      const condicao3 = validadeRG >= 15 && idadeUsuario > 50
+
+      console.log (condicao1 || condicao2 || condicao3)
+
+
 }
 
 // EXERCÍCIO 14
 function checaAnoBissexto(ano) {
   // implemente sua lógica aqui
+      const anoBissexto = (ano%400 == 0)
+      const anoBissexto2 = (ano%4==0 && ano%100!=0)
+      return ((ano%400 == 0) || (ano%4==0 && ano%100!=0))
 
 }
 
@@ -143,4 +173,4 @@ function checaAnoBissexto(ano) {
 function checaValidadeInscricaoLabenu() {
   // implemente sua lógica aqui
 
-}
+
