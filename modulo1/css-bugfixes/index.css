@@ -19,6 +19,9 @@ h2 {
 input {
     height: 20px;
     width: 500px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
 }
 
 button:focus {
@@ -31,10 +34,6 @@ img {
 
 div>p:first-child {
     display: inline;
-}
-
-div img {
-    
 }
 
 .botao-amarelo {
@@ -108,6 +107,7 @@ div img {
 div:nth-child(2),
 div:last-child {
     text-align: center;
+    
 }
 
 table {
@@ -140,6 +140,7 @@ td button:hover{
 .container-do-search {
     margin-top: 20px;
     height: 100px;
+    
 }
 
 
