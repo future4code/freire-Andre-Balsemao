@@ -50,6 +50,7 @@ div img {
     background-color: #c44f00;
 }
 
+
 .container {
     height: 500px;
     text-align: center;
@@ -70,10 +71,20 @@ div img {
     background-color: #2274a5;
     color: white;
     padding: 100px;
+
+    
+}
+#container-de-descricao>p {
+    text-align: center;
+    padding: 0px 100px 0px 100px;
+    
+    
 }
 
 #container-de-descricao>ol {
     padding: 15px 0px;
+    text-align: center;
+    
 }
 
 #container-para-comprar {
