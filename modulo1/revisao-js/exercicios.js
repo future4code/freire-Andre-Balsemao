@@ -149,3 +149,6 @@ function retornaArrayOrdenadoAlfabeticamente(consultas) {
 function retornaArrayOrdenadoPorData(consultas) {
    
 }
+
+
+
