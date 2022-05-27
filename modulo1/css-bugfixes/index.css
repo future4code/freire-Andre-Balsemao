@@ -114,7 +114,8 @@ div:last-child {
 }
 
 table {
-    width: 60%;
+    width: 55%;
+    margin: auto;
 
 
 }
@@ -143,6 +144,9 @@ td button:hover{
 .container-do-search {
     margin-top: 20px;
     height: 100px;
+   
+    
+
     
 }
 
