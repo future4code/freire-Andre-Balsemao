@@ -39,4 +39,7 @@ if (novaRodada) {
 } else {
    console.log('O jogo acabou!')
 }
+<<<<<<< HEAD
+=======
 
+>>>>>>> f107fc589007c7597fe9edb4502fe816d9521c16
