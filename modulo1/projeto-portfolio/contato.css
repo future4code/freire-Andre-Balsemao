@@ -37,7 +37,10 @@ textarea {
     border: 1px solid;
 }
 
-input:hover, textarea:hover, input:focus, textarea:focus {
+input:hover,
+textarea:hover,
+input:focus,
+textarea:focus {
     border-color: #000066;
     box-shadow: 5px 0px 9px #aaaaaa;
     background-color: #fdfdfd;
@@ -57,7 +60,10 @@ input:hover, textarea:hover, input:focus, textarea:focus {
     color: black;
 }
 
-input:hover,textarea:hover,input:focus,textarea:focus {
+input:hover,
+textarea:hover,
+input:focus,
+textarea:focus {
     border-color: #000066;
     background-color: #fdfdfd;
     color: rgb(0, 0, 0);
@@ -76,3 +82,4 @@ form label {
     color: #FFFFFF;
     font-weight: bold;
 }
+
