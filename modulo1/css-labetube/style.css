@@ -4,6 +4,16 @@
 }
 
 
+a {
+    text-decoration: none;
+    color: black;
+    text-align: start;
+
+}
+
+div.info {
+    display: grid;
+}
 
 header {
     display: grid;
@@ -22,6 +32,13 @@ video {
     align-content: center;
     align-self: baseline;
 }
+
+video>p {
+
+    display: flex;
+}
+
+
 
 #container {
     display: grid;
@@ -68,4 +85,74 @@ section {
     align-items: center;
     justify-items: center;
     text-align: end;
+}
+
+@media screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+    header.h2 {
+        display: grid;
+        font-size: 0.5em
+    }
+
+    header.input {
+        width: 5%;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column-reverse;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: flex-end;
+        justify-content: center;
+
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-device-width : 481px) and (max-device-width : 800px) {
+    header.h2 {
+        display: grid;
+        font-size: 0.5em
+    }
+
+    header.input {
+        width: 5%;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column-reverse;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: flex-end;
+        justify-content: space-between;
+
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    #container>main {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: end;
+        justify-items: center;
+        justify-content: center;
+        grid-column: 1/-1;
+
+    }
+
+    #container {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        align-items: center;
+    }
 }
