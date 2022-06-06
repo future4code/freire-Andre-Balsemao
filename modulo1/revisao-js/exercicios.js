@@ -148,10 +148,4 @@ function retornaArrayOrdenadoAlfabeticamente(consultas) {
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {
    
-<<<<<<< HEAD
-}
-
-
-=======
->>>>>>> 125c5e8932cc54af455e20f68e2a1037801cb22f
 
