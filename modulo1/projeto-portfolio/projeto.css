@@ -1,0 +1,27 @@
+body {
+    padding: 25px;
+    margin: 25px;
+    font-family: Verdana, Tahoma, sans-serif;
+}
+
+h2 img {
+    max-width: 800px;
+    max-height: 600px;
+    width: auto;
+    height: auto;
+}
+
+h2 {
+    clear: both;
+    margin-top: 20px;
+}
+
+img {
+    vertical-align: top
+}
+
+h2{
+    font-size: 42px;
+    text-shadow: 3px 3px 3px gray
+}
+
