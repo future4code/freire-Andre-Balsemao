@@ -93,6 +93,7 @@ class Post extends React.Component {
       componenteComentario = (
         <SecaoComentario aoEnviar={this.aoEnviarComentario} />
       );
+      
     }
 
     return (
