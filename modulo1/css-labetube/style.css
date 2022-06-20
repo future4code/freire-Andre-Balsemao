@@ -1,0 +1,158 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+a {
+    text-decoration: none;
+    color: black;
+    text-align: start;
+
+}
+
+div.info {
+    display: grid;
+}
+
+header {
+    display: grid;
+    background-color: orange;
+    grid-template-rows: 80px;
+    grid-template-columns: 1fr 100px;
+    align-items: center;
+    padding: 0 50px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+
+video {
+    width: 175px;
+    height: 100px;
+    align-content: center;
+    align-self: baseline;
+}
+
+video>p {
+
+    display: flex;
+}
+
+
+
+#container {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+}
+
+footer {
+    background-color: orange;
+    text-align: center;
+    grid-template-rows: 100px;
+    padding: 20px 0px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+
+#container>main {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: end;
+    justify-items: center;
+    justify-content: center;
+    grid-column: 1/-1;
+
+
+}
+
+section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+    justify-items: center;
+}
+
+.card {
+    display: grid;
+    margin: 5px;
+    border: 1px solid black;
+    height: 132px;
+    width: 176px;
+    align-items: center;
+    justify-items: center;
+    text-align: end;
+}
+
+@media screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+    header.h2 {
+        display: grid;
+        font-size: 0.5em
+    }
+
+    header.input {
+        width: 5%;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column-reverse;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: flex-end;
+        justify-content: center;
+
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-device-width : 481px) and (max-device-width : 800px) {
+    header.h2 {
+        display: grid;
+        font-size: 0.5em
+    }
+
+    header.input {
+        width: 5%;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column-reverse;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: flex-end;
+        justify-content: space-between;
+
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    #container>main {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: end;
+        justify-items: center;
+        justify-content: center;
+        grid-column: 1/-1;
+
+    }
+
+    #container {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        align-items: center;
+    }
+}

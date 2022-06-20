@@ -1,0 +1,16 @@
+body {
+    padding: 25px;
+    margin: 25px;
+    font-family: Verdana, Tahoma, sans-serif;
+
+}
+
+head {
+
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+}
+
+h1 {
+    text-shadow: 3px 3px 3px gray
+}
