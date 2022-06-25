@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import styled from "styled-components";
+import TelaCriaPlaylist from "./components/TelaCriaPlaylist";
+import TelaConsultaPlaylist  from "./components/TelaConsultaPlaylist";
 
-function App() {
+const Background = styled.div`
+  background-color: orange;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+`;
+
+export default class App extends React.Component {
+  state = {
+    telaAtual: "true",
+  }
+
+trocaTela = () => {
+  this.setState({
+    pagina: !this.state.pagina,
+  });
+};
+render() {
+  const pagina = this.state.pagina ? <TelaConsultaPlaylist /> : <TelaCriaPlaylist/>;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Background>
+    <div> 
+      <h1>LABEFY</h1>
+      <button className="inverteTela" onClick={this.trocaTela}>
+        {this.state.pagina ? "Home" : "Ver Playlists"}
+      </button>
+      {pagina}
     </div>
+    </Background>
   );
 }
-
-export default App;
+}
