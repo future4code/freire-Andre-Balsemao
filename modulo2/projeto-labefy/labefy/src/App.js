@@ -1,38 +1,33 @@
 import React from "react";
-import styled from "styled-components";
-import TelaCriaPlaylist from "./components/TelaCriaPlaylist";
-import TelaConsultaPlaylist  from "./components/TelaConsultaPlaylist";
+import Playlist from "./pages/Playlists";
+import Inicial from "./pages/Inicial";
 
-const Background = styled.div`
-  background-color: orange;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-`;
+
+
 
 export default class App extends React.Component {
-  state = {
-    telaAtual: "true",
-  }
 
-trocaTela = () => {
-  this.setState({
-    pagina: !this.state.pagina,
-  });
+state = {
+  entrar: false
 };
-render() {
-  const pagina = this.state.pagina ? <TelaConsultaPlaylist /> : <TelaCriaPlaylist/>;
 
-  return (
-    <Background>
-    <div> 
-      <h1>LABEFY</h1>
-      <button className="inverteTela" onClick={this.trocaTela}>
-        {this.state.pagina ? "Home" : "Ver Playlists"}
-      </button>
-      {pagina}
-    </div>
-    </Background>
-  );
+mostrar = () => {
+  this.setState({ entrar: true });
+};
+
+voltar = () => {
+  this.setState({ entrar: false });
+};
+
+render() {
+  let pagina;
+  if (this.state.entrar) {
+    pagina = <Playlist onClickLogout={this.voltar} />;
+  } else {
+    pagina = <Inicial onClickLogin={this.mostrar} />;
+  }
+  return <div>{pagina}</div>;
 }
 }
+
+
