@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Playlist from "./pages/Playlists";
+import Inicial from "./pages/Inicial";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+
+export default class App extends React.Component {
+
+state = {
+  entrar: false
+};
+
+mostrar = () => {
+  this.setState({ entrar: true });
+};
+
+voltar = () => {
+  this.setState({ entrar: false });
+};
+
+render() {
+  let pagina;
+  if (this.state.entrar) {
+    pagina = <Playlist onClickLogout={this.voltar} />;
+  } else {
+    pagina = <Inicial onClickLogin={this.mostrar} />;
+  }
+  return <div>{pagina}</div>;
+}
 }
 
-export default App;
+
