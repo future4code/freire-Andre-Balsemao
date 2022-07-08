@@ -1,10 +1,11 @@
-import React, { useState , useEfect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import InitialCard from "./components/InitialCard";
 
 function App() {
   return (
     <div className="App">
-      Hello World!!
+      <InitialCard />
     </div>
   );
 }
