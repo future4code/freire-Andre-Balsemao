@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom'
 import { goBack } from "../Routes/Coordinator";
-
+import { HeaderComponent } from "../Components/headerComponent";
 
 
 export const ApplicationFormPage = () =>{
@@ -9,7 +9,7 @@ export const ApplicationFormPage = () =>{
 
     return (
 
-        <><div>
+        <><HeaderComponent></HeaderComponent><div>
             Application Form Page
         </div><div>
                 <button>Reserve a sua viagem</button>

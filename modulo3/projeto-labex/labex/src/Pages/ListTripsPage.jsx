@@ -1,5 +1,6 @@
 import React from "react";
 import {useNavigate} from 'react-router-dom';
+import { HeaderComponent } from "../Components/headerComponent";
 
 export const ListTripsPage = () => {
    const navigate = useNavigate()
@@ -12,6 +13,7 @@ export const ListTripsPage = () => {
 
     <>
         <div>
+        <HeaderComponent></HeaderComponent>
             List Trips Page
         </div>
         <div>

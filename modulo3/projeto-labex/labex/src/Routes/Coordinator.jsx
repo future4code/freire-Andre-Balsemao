@@ -23,3 +23,7 @@ export const goToCreatTripPage = (navigate) => {
 export const goToTripDetailsPage = (navigate) => {
     navigate('/tripDetailsPage')
 }
+
+export function goToHome(navigate) {
+    navigate('/')
+}
