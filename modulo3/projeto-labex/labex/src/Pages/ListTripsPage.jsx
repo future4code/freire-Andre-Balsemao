@@ -9,6 +9,8 @@ export const ListTripsPage = () => {
     navigate ('/applicationFormPage')
    }
 
+   
+
     return(
 
     <>

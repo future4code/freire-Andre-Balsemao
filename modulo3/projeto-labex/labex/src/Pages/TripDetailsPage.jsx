@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { HeaderComponent } from "../Components/headerComponent";
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { useProtectedPage } from '../Hooks/ProtectedPage';
 
 export const TripDetailsPage = () => {
