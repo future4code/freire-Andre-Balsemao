@@ -4,20 +4,16 @@ import { HeaderComponent } from "../Components/headerComponent";
 import { useEffect } from "react";
 // import { useNavigate } from "react-router-dom";
 import { useProtectedPage } from '../Hooks/ProtectedPage';
+import {url, headers} from '../Constants/url';
 
 export const TripDetailsPage = () => {
     useProtectedPage()
     
   useEffect(() => {
-    const token = localStorage.getItem('token')
+    // const token = localStorage.getItem('token')
     axios
-      .get(
-        "https://us-central1-labenu-apis.cloudfunctions.net/labeX/andre/trip/id",
-        {
-          headers: {
-            auth: token
-          },
-        }
+      .get( `${url}/trip/:id`, 
+        
       )
       .then((response) => {
         console.log(response.data);

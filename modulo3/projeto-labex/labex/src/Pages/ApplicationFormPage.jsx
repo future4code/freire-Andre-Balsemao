@@ -1,25 +1,45 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { goBack } from "../Routes/Coordinator";
 import { HeaderComponent } from "../Components/headerComponent";
 import useForm from "../Hooks/useForm";
+import { useGetTrips } from "../Hooks/getTrips";
+import axios from "axios";
+import { url } from "../Constants/url";
 
 export const ApplicationFormPage = () => {
-  const navigate = useNavigate();
-
+  // const navigate = useNavigate();
   const { form, onChange, cleanFields } = useForm({
     name: "",
     age: "",
     applicationText: "",
     profession: "",
     country: "",
-    trip: ""
+    id: "",
   });
+
   const candidate = (event) => {
     event.preventDefault();
     console.log("Inscrição realizada", form);
+    const body = {
+      name: form.name,
+      age: form.age,
+      applicationText: form.applicationText,
+      profession: form.profession,
+      country: form.country,
+    };
+    axios
+      .post(`${url}/trips/${form.id}/apply`, body)
+      .then((res) => {
+        console.log("deu certo");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
     cleanFields();
   };
+
+  const tripsList = useGetTrips();
 
   return (
     <>
@@ -63,13 +83,14 @@ export const ApplicationFormPage = () => {
             pattern={"^.{10,}"}
             title={"Sua resposta deve ter no mínimo 10 caracteres"}
           ></input>
-          <select 
+          <select
             id="paises"
             name={"country"}
             value={form.country}
             onChange={onChange}
-            required>
-            <option value=""> </option>  
+            required
+          >
+            <option value=""> </option>
             <option value="Brasil"> Brasil</option>
             <option value="Afeganistão">Afeganistão</option>
             <option value="África do Sul">África do Sul</option>
@@ -351,7 +372,15 @@ export const ApplicationFormPage = () => {
             <option value="Zimbabwe">Zimbabwe</option>
             <option value="Zâmbia">Zâmbia</option>
           </select>
-          <input></input>
+          <select name={"id"} value={form.id} onChange={onChange} required>
+            {tripsList.map((trip) => {
+              return (
+                <option key={trip.id} value={trip.id}>
+                  <p>{trip.name}</p>
+                </option>
+              );
+            })}
+          </select>
         </div>
         <div>
           <button>Reserve a sua viagem</button>

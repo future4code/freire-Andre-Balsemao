@@ -3,6 +3,8 @@ import { HeaderComponent } from "../Components/headerComponent";
 import useForm from "../Hooks/useForm";
 import { useProtectedPage } from "../Hooks/ProtectedPage";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { url, headers } from "../Constants/url";
 
 export const CreateTripPage = () => {
   const navigate = useNavigate();
@@ -17,7 +19,25 @@ export const CreateTripPage = () => {
   });
   const creatTrip = (event) => {
     event.preventDefault();
-    console.log("Viagem criada", form);
+    console.log("viagem chegou", form);
+    
+
+    const body = {
+      name: form.name,
+      planet: form.planet,
+      date: form.date,
+      description: form.description,
+      durationInDays: form.durationInDays,
+    };
+
+    axios
+      .post(`${url}/trips`, body, headers)
+
+      .then(() => {})
+      .catch((err) => {
+        console.log(err);
+      });
+
     cleanFields();
   };
 
