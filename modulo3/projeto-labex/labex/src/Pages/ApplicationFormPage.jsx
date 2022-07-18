@@ -1,8 +1,8 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { HeaderComponent } from "../Components/headerComponent";
 import useForm from "../Hooks/useForm";
-import { useGetTrips } from "../Hooks/getTrips";
+import { useGetTrips } from "../Hooks/useGetTrips";
 import axios from "axios";
 import { url } from "../Constants/url";
 

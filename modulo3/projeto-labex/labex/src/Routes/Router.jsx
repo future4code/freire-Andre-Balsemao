@@ -23,7 +23,6 @@ export const Router = () => {
         <Route path="/admin/trips/:id" element={<TripDetailsPage />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
-        <FooterComponent></FooterComponent>
     </BrowserRouter>
   );
 };

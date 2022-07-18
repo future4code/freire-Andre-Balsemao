@@ -1,36 +1,35 @@
 import React from "react";
 import axios from "axios";
-import {useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { HeaderComponent } from "../Components/headerComponent";
-import { useGetTrips } from "../Hooks/getTrips";
+import { useGetTrips } from "../Hooks/useGetTrips";
+import { useGetTripDetail } from "../Hooks/useGetTripDetail";
 
 export const ListTripsPage = () => {
-   const navigate = useNavigate()
-   const tripsList  = useGetTrips ()
+  const navigate = useNavigate();
+  const tripsList = useGetTrips();
 
-   const goToApplicationFormPage = () => {
-    navigate ('/applicationFormPage')
-   }
+  const goToApplicationFormPage = () => {
+    navigate("/applicationFormPage");
+  };
 
-   
-   return(
-
+  return (
     <>
-        <div>
+      <div>
         <HeaderComponent></HeaderComponent>
-            List Trips Page
-        </div>
-        {tripsList.map((trip) => {
+        <h2>List Trips Page</h2>
+      </div>
+      {tripsList.map((trip) => {
         return (
           <div key={trip.id}>
             <p>{trip.name}</p>
           </div>
         );
       })}
-        <div>
-            <button onClick={goToApplicationFormPage}>Aventure-se</button>
-        </div>
+      <div>
+        <button onClick={goToApplicationFormPage}>Aventure-se</button>
+      </div>
     </>
-    )
-}
+  );
+};

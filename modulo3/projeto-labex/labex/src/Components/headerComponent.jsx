@@ -10,10 +10,12 @@ export const HeaderComponent = () => {
     <Header>
     <div>
       <HomeButton>
-      <button onClick={() => goToHome(navigate)}>HOME</button>
       </HomeButton>
-      <button onClick={() => goToLoginPage(navigate)}>Login</button>
-      <h3>Eu sou o Header</h3>
+      <div className="botoes">
+      <button className="home" onClick={() => goToHome(navigate)}>HOME</button>
+      <button className="login" onClick={() => goToLoginPage(navigate)}>Login</button>
+      </div>
+      <div className="LabexHeader"><h3>LabeX</h3></div>
     </div>
     </Header>
   );

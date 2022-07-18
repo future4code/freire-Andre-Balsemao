@@ -7,15 +7,15 @@ export const HomePage = () => {
 
   return (
     <>
-      <div>
-        <h3>Home Page</h3>
+      <div className="Labex">
+        <h3>LabeX</h3>
       </div>
-      <div>
-        <button onClick={() => goToListTripPage(navigate)}>
+      <div className="buttons">
+        <button className="Astro" onClick={() => goToListTripPage(navigate)}>
           {" "}
-          AstroTurista{" "}
+          Seja um AstroTurista{" "}
         </button>
-        <button onClick={() => goToLoginPage(navigate)}> Colaboradores </button>
+        <button className="Colabora" onClick={() => goToLoginPage(navigate)}> Área dos Colaboradores </button>
       </div>
     </>
   );

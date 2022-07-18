@@ -44,7 +44,7 @@ export const LoginPage = () => {
 
   return (
     <>
-      <div>Login Page</div>
+      <div className="Labex">LabeX</div>
       <form onSubmit={onSubmitLogin}>
         <div>
           <input
