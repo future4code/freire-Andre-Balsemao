@@ -1,12 +1,17 @@
 import React from "react"
+import theme from "./Constants/theme";
 import {Router} from "./Routes/Router";
+import { ThemeProvider } from "@mui/material";
+import GlobalState from "./Global/GlobalState";
 
 
 const App = () => {
   return (
-    <div>
+    <ThemeProvider theme={theme}>
+     <GlobalState> 
      <Router/>
-    </div>
+     </GlobalState>
+    </ThemeProvider>
   );
 }
 

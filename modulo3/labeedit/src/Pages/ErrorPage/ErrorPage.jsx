@@ -1,6 +1,8 @@
 import React from "react";
+import useUnProtectedPage from '../../Hooks/useUnProtectedPage'
 
 const ErrorPage = () => {
+    useUnProtectedPage()
     return(
         <div>
             <h1>

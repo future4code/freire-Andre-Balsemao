@@ -11,8 +11,16 @@ export const goToSignUp = (navigate) => {
 };
 
 export const goToPost = (navigate) => {
-  navigate(`/post/${id}`);
+  navigate('/post/');
 };
+
+// export const goToPost = (navigate) => {
+//   navigate(`/post/${id}`);
+// };
+
+export const goToFeed = (navigate) =>{
+  navigate('/feed')
+}
 
 export const goBack = (navigate) => {
   navigate(-1);
