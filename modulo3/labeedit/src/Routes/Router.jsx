@@ -12,11 +12,11 @@ export const Router = () => {
     <BrowserRouter>
     <Header/>
       <Routes>
-        <Route index element={<FeedPage />} />
+        <Route index element={<LoginPage />} />
         <Route path="/cadastro" element={<SignUpPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/feed" element={<FeedPage />} />
-        <Route path="/post/:id" element={<PostPage />} />
+        <Route path="/post" element={<PostPage />} />
         <Route path="*" element={<ErrorPage />}>          
         </Route>
       </Routes>

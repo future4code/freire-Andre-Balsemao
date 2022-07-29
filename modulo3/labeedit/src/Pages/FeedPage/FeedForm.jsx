@@ -1,45 +1,44 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import { InputsContainer } from "./styled";
 import { TextField, Button, CircularProgress } from "@mui/material";
 import useForm from "../../Hooks/useForm";
-import { login } from "../../Services/user";
-import { useNavigate } from "react-router-dom";
+import { post } from "../../Services/post";
+import { useEffect } from "react";
 
-const LoginForm = () => {
-  const {form, onChange, cleanFields} = useForm({
-    email: "",
-    password: "",
+const PostForm = () => {
+    const { form, onChange, cleanFields } = useForm({
+    title: "",
+    body: "",
   });
-  const navigate = useNavigate()
   const [isLoading, setIsLoading] = useState(false)
-
-  const onSubmitLogin = (event) => {
+  const onSubmitPost = (event) => {
     event.preventDefault();
-    login(form, navigate, setIsLoading)
-    cleanFields()
+    post(form, setIsLoading);
+    cleanFields();
+   
   };
-
+ 
 
   return (
     <InputsContainer>
-      <form onSubmit={onSubmitLogin}>
+      <form onSubmit={onSubmitPost}>
         <TextField
-          name={"email"}
-          value={form.email}
+          name={"title"}
+          value={form.title}
           onChange={onChange}
-          type="email"
-          label="Email"
+          type="text"
+          label="Titulo do Post"
           variant="outlined"
           fullWidth
           margin={"normal"}
           required
         />
         <TextField
-          name={"password"}
-          value={form.password}
+          name={"body"}
+          value={form.body}
           onChange={onChange}
-          type="password"
-          label="Senha"
+          type="text"
+          label="Escreva seu Post"
           variant="outlined"
           fullWidth
           margin={"normal"}
@@ -47,17 +46,17 @@ const LoginForm = () => {
         />
       </form>
       <Button
-        onClick={onSubmitLogin}
+        onClick={onSubmitPost}
         type={"submit"}
         fullWidth
         variant={"contained"}
         color={"primary"}
         margin={"normal"}
       >
-        {isLoading? <CircularProgress color={"inherit"} size={"24px"}/> : <>Login</> }
+        {isLoading? <CircularProgress color={"inherit"} size={"24px"}/> : <>Postar</> }
       </Button>
     </InputsContainer>
   );
 };
 
-export default LoginForm;
+export default PostForm;

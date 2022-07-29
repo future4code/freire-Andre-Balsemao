@@ -1,4 +1,3 @@
-import React, {useState} from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import { StyledToolbar } from "./styled";
@@ -10,15 +9,13 @@ import { useNavigate } from "react-router-dom";
 const Header = () => {
     const navigate = useNavigate ()
     const token = localStorage.getItem("token")
-    const [rTextButton, setRTextButton] = useState(token && token ? "Logout" : "Login")
-
+    
     const logout = () =>{
       localStorage.removeItem('token')
     }
-    const rButtonAction = () =>{
+    const loginButtonAction = () =>{
       if (token){
         logout()
-        setRTextButton('Login')
         goToLogin(navigate)
       } 
       else{
@@ -30,7 +27,7 @@ const Header = () => {
       <AppBar position="static">
         <StyledToolbar>
           <Button onClick={() => goToHome(navigate)} color="inherit">LabeEdit</Button>
-          <Button onClick={rButtonAction} color="inherit">{rTextButton}</Button>
+          <Button onClick={loginButtonAction} color="inherit">{token && token ? "Logout" : "Login"}</Button>
         </StyledToolbar>
       </AppBar>
     </Box>
