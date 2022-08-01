@@ -9,7 +9,9 @@ export const PostCardContainer = styled(Card)`
 
 export const PostCardContent = styled(CardContent)`
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 40px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 80px;
+
 `

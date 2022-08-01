@@ -1,31 +1,28 @@
-import React from 'react'
-import {CardActionArea}  from '@mui/material'
-import {CardMedia} from '@mui/material'
-import {Typography} from '@mui/material'
-import {PostCardContainer, PostCardContent} from './styled'
+import React from "react";
+import { CardActionArea } from "@mui/material";
+import { Typography } from "@mui/material";
+import { PostCardContainer, PostCardContent } from "./styled";
 
 const PostCard = (props) => {
-
   return (
     <PostCardContainer onClick={props.onClick}>
       <CardActionArea>
-        <CardMedia
-          component={'text'}
-          alt={props.title}
-          height={'150px'}
-          text={props.text}
-          title={props.title}
-          usename={props.username}
-
-        />
         <PostCardContent>
-          <Typography align={'center'}>
-            {props.title && props.title.toUpperCase()}
+          <Typography variant="h5" sx={{ fontSize: 12 }}>
+           Enviado por: {props.username}
           </Typography>
+          <Typography align={"center"}>
+            <Typography
+              sx={{ fontSize: 16 }}
+              color="text.secondary"
+              username={props.username}
+            >{props.title && props.title.toUpperCase()}</Typography>
+          </Typography>
+          
         </PostCardContent>
       </CardActionArea>
     </PostCardContainer>
-  )
-}
+  );
+};
 
-export default PostCard
+export default PostCard;

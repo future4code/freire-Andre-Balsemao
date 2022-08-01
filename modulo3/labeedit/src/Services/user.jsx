@@ -1,9 +1,7 @@
 import axios from 'axios'
 import { BASE_URL } from '../Constants/urls'
 import { goToFeed } from '../Routes/Coordinator'
-// import { useContext } from 'react'
 
-//, setRTextButton
 
 
 export const login = (body, navigate, setIsLoading)  =>{

@@ -13,10 +13,10 @@ export const Router = () => {
     <Header/>
       <Routes>
         <Route index element={<LoginPage />} />
-        <Route path="/cadastro" element={<SignUpPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/feed" element={<FeedPage />} />
-        <Route path="/post" element={<PostPage />} />
+        <Route path="cadastro" element={<SignUpPage />} />
+        <Route path="login" element={<LoginPage />} />
+        <Route path="feed" element={<FeedPage />} />
+        <Route path="post/:id" element={<PostPage />} />
         <Route path="*" element={<ErrorPage />}>          
         </Route>
       </Routes>

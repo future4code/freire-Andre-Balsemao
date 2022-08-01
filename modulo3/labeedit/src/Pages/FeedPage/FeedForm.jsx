@@ -3,7 +3,7 @@ import { InputsContainer } from "./styled";
 import { TextField, Button, CircularProgress } from "@mui/material";
 import useForm from "../../Hooks/useForm";
 import { post } from "../../Services/post";
-import { useEffect } from "react";
+
 
 const PostForm = () => {
     const { form, onChange, cleanFields } = useForm({
@@ -43,6 +43,7 @@ const PostForm = () => {
           fullWidth
           margin={"normal"}
           required
+
         />
       </form>
       <Button
