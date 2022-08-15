@@ -2,7 +2,7 @@ function checaRenovacaoRG(
   anoAtual: number,
   anoNascimento: number,
   anoEmissao: number
-): string {
+): boolean | string {
   let idade = anoAtual - anoNascimento;
   let tempoCarteira = anoAtual - anoEmissao;
 
@@ -22,4 +22,4 @@ function checaRenovacaoRG(
     return "error";
   }
 }
-console.log(checaRenovacaoRG(2022, 1979, 2013))
+console.log(checaRenovacaoRG(2022, 1979, 2012))
