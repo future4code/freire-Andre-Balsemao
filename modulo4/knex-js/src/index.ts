@@ -98,12 +98,13 @@ const updateActor = async (id: string, salary: number): Promise<any> => {
       .where("id", id);
   };
 
-  app.put("/actor/:id", async (req, res) => {
+ app.put("/users/:id", async (req, res) => {
     try {
       const id = req.params.id;
+      const salary = req.body.salary;
 
-      const count = await countActors(gender);
-      console.log(await countActors(gender));
+      const count = await updateActor(id, salary);
+      console.log(await updateActor(id, salary));
 
       res.send(count);
     } catch (error: any) {
