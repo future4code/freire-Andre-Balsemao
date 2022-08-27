@@ -16,7 +16,6 @@ export default async function getUserById(
           
         }
         res.status(200).send({
-            message: 'Sucesso',
             id: user.id,
             nickname: user.nickname
         })
