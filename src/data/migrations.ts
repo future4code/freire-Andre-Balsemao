@@ -21,3 +21,4 @@ const closeConnection = () => { connection.destroy() }
 createTables()
    .then(() => console.log("Banco pronto!"))
    .finally(closeConnection)
+   
