@@ -1,11 +1,12 @@
 import { AddressInfo } from "net";
 import app from "./app";
 import { getAddress } from "./endpoints/getAddress";
+import { getAllAddress } from "./endpoints/getAllAdress";
 import { insertAdress } from "./endpoints/insertAdress";
 
-app.post("/user/:cep",insertAdress)
-
 app.get("/endereco/:cep", getAddress)
+app.post("/user/:cep/:numero",insertAdress)
+app.get("/list", getAllAddress)
 
 
 const server = app.listen(process.env.PORT || 3003, () => {

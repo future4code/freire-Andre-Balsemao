@@ -1,4 +1,10 @@
-GET http://localhost:3003/endereco/05424150
+GET http://localhost:3003/endereco/94150430
 
 ###
-POST  http://localhost:3003/user/31231412
+post https://cep-labenu.herokuapp.com/user/05424150
+
+###
+post http://localhost:3003/user/94910003/290
+
+###
+GET http://localhost:3003/list
