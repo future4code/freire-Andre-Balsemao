@@ -1,0 +1,15 @@
+GET http://localhost:3003/character?name=o&orderType=DESC
+
+###
+
+POST  http://localhost:3003/users
+Content-Type: application/json
+
+{
+    "name": "André Balsemão",
+    "email": "andrebalsemao@gmail.com",
+    "password": "123456"
+}
+
+###
+DELETE http://localhost:3003/character/6
