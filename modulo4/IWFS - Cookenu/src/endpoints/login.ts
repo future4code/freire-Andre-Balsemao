@@ -12,7 +12,7 @@ export async function login (req: Request, res: Response) {
             res.status(422).send("Insira todos os dados solicitados")
            
         }
-
+        
         const userDatabase = new UserDatabase()
         const user = await userDatabase.findUserByEmail(email);
 
@@ -29,9 +29,9 @@ export async function login (req: Request, res: Response) {
 
         
         const authenticator = new Authenticator()
-        const token = authenticator.generate({id: user.getId(), role: user.getRole()})
+        const access_token = authenticator.generate({id: user.getId()})
 
-        res.status(200).send({message: 'Usuário logado com sucesso', token})
+        res.status(200).send({message: 'Usuário logado com sucesso', access_token, id: user.getId()})
 
     } catch (error:any) {
         res.status(400).send(error.message)

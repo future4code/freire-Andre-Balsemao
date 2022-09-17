@@ -8,17 +8,10 @@ export async function getAllCharacters(req:Request, res: Response) {
     const token = req.headers.authorization as string
 
     if (!token) {
-        res.status(422).send("Authorization não informado no headers")
+        throw new Error("Authorization não informado no headers")
     }
 
     const authenticator = new Authenticator()
-    const tokenData = authenticator.getTokenData(token)
-
-    if (tokenData.role !== "ADMIN") {
-        res.status(401).send("Você não tem autorização para acessar essa página")
-        
-    }
-
     const userDatabase = new UserDatabase
     const users = await userDatabase.getAllUser()
     res.status(200).send(users)
