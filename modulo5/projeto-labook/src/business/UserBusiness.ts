@@ -23,30 +23,26 @@ export class UserBusiness {
         }
 
         if (typeof name !== "string" || name.length < 3) {
-            throw new Error("Parâmetro 'name' inválido")
+            throw new Error("Parâmetro 'name' deve possuir no mínimo 3 caracteres.")
         }
 
         if (typeof email !== "string" || email.length < 3) {
-            throw new Error("Parâmetro 'email' inválido")
+            throw new Error("Parâmetro 'email' deve possuir no mínimo 3 caracteres.")
         }
 
         if (!email.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {
             throw new Error("Parâmetro 'email' inválido")
         }
 
-        if (typeof password !== "string" || password.length < 3) {
-            throw new Error("Parâmetro 'password' inválido")
+        if (typeof password !== "string" || password.length < 6) {
+            throw new Error("Parâmetro 'password' deve possuir no mínimo 3 caracteres.")
         }
 
-        //const userDatabase = new UserDatabase() -- Inclusão da Inversão de Controle
         const userDB = await this.userDatabase.findByEmail(email)
 
         if (userDB) {
             throw new Error("E-mail já cadastrado")
         }
-
-        // const idGenerator = new IdGenerator()
-        // const hashManager = new HashManager()
 
         const id = this.idGenerator.generate()
         const hashedPassword = await this.hashManager.hash(password)
@@ -66,7 +62,7 @@ export class UserBusiness {
             role: user.getRole()
         }
 
-       // const authenticator = new Authenticator()
+       
         const token = this.authenticator.generateToken(payload)
 
         const response: ISingUpOutputtDTO = {
@@ -82,22 +78,22 @@ export class UserBusiness {
         const password = input.password
 
         if (!email || !password) {
-            throw new Error("Um ou mais parâmetros faltando")
+            throw new Error("Alguma informação está faltando(email ou senha)!")
         }
 
         if (typeof email !== "string" || email.length < 3) {
-            throw new Error("Parâmetro 'email' inválido")
+            throw new Error("Email inválido")
         }
 
         if (!email.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {
-            throw new Error("Parâmetro 'email' inválido")
+            throw new Error("Email inválido")
         }
 
         if (typeof password !== "string" || password.length < 3) {
-            throw new Error("Parâmetro 'password' inválido")
+            throw new Error("Senha inválida ou não confere!!")
         }
 
-        //const userDatabase = new UserDatabase()
+        
         const userDB = await this.userDatabase.findByEmail(email)
 
         if (!userDB) {
@@ -112,7 +108,7 @@ export class UserBusiness {
             userDB.role
         )
 
-       // const hashManager = new HashManager()
+       
         const isPasswordCorrect = await this.hashManager.compare(password, user.getPassword())
 
         if (!isPasswordCorrect) {
@@ -124,7 +120,6 @@ export class UserBusiness {
             role: user.getRole()
         }
 
-       // const authenticator = new Authenticator()
         const token = this.authenticator.generateToken(payload)
 
         const response:ISingUpOutputtDTO = {
@@ -145,7 +140,6 @@ export class UserBusiness {
 
         const offset = limit * (page - 1)
 
-        //const authenticator = new Authenticator()
         const payload = this.authenticator.getTokenPayload(token)
 
         if (!payload) {
@@ -160,7 +154,6 @@ export class UserBusiness {
             offset
         }
 
-        //const userDatabase = new UserDatabase()
         const usersDB = await this.userDatabase.getUsers(getUsersInputDB)
 
         const users = usersDB.map(userDB => {
@@ -207,7 +200,6 @@ export class UserBusiness {
             throw new Error("Não é possível deletar a própria conta")
         }
 
-       // const userDatabase = new UserDatabase()
         const userDB = await this.userDatabase.findById(idToDelete)
 
         if (!userDB) {
@@ -240,7 +232,6 @@ export class UserBusiness {
             throw new Error("Parâmetros faltando")
         }
 
-        //const authenticator = new Authenticator()
         const payload = this.authenticator.getTokenPayload(token)
 
         if (!payload) {
@@ -277,7 +268,6 @@ export class UserBusiness {
             }
         }
 
-        //const userDatabase = new UserDatabase()
         const userDB = await this.userDatabase.findById(idToEdit)
 
         if (!userDB) {

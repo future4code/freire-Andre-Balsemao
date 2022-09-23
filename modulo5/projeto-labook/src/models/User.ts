@@ -110,6 +110,7 @@ export interface IEditUsersInputDTO{
 export interface ISingUpOutputtDTO{
     message: string,
     token: string
+    
 }
 
 export interface IGetUsersResponseOutputDTO{
